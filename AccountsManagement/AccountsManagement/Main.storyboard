@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Transaction View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="TransactionViewController" id="BYZ-38-t0r" customClass="TransactionViewController" customModule="AccountsManagement" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9xb-ZR-BPY">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="4zJ-Re-pwQ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QGX-Ko-tgR"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PE5-FG-GkN">
+                                <rect key="frame" x="10" y="59" width="309" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PC7-Zu-sIJ">
+                                <rect key="frame" x="329" y="56" width="49" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="date_sort_icon"/>
+                                <connections>
+                                    <action selector="sortByDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z2y-da-p7F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PE5-FG-GkN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="CBu-zz-Kqi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PC7-Zu-sIJ" secondAttribute="trailing" constant="15" id="JQk-EL-ncK"/>
+                            <constraint firstItem="PE5-FG-GkN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MzG-lI-FAZ"/>
+                            <constraint firstItem="9xb-ZR-BPY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PQW-HN-ysV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9xb-ZR-BPY" secondAttribute="trailing" id="UZp-wj-5Xc"/>
+                            <constraint firstItem="PC7-Zu-sIJ" firstAttribute="leading" secondItem="PE5-FG-GkN" secondAttribute="trailing" constant="10" id="UeS-xK-hri"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9xb-ZR-BPY" secondAttribute="bottom" id="YNp-wE-xBU"/>
+                            <constraint firstItem="PC7-Zu-sIJ" firstAttribute="centerY" secondItem="PE5-FG-GkN" secondAttribute="centerY" id="ZLe-Wv-Rp4"/>
+                            <constraint firstItem="9xb-ZR-BPY" firstAttribute="top" secondItem="PE5-FG-GkN" secondAttribute="bottom" constant="10" id="xjN-t8-86o"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dateSortButton" destination="PC7-Zu-sIJ" id="YpI-5U-vlQ"/>
+                        <outlet property="transactionSearchField" destination="PE5-FG-GkN" id="Xu4-nn-xQr"/>
+                        <outlet property="transactionTableView" destination="9xb-ZR-BPY" id="yUo-nj-nWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.21374045801527" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="date_sort_icon" width="25" height="26"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
